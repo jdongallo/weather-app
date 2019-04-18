@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,500");
+@import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:300');
+
+body {
+    text-align: center;
+}
+
+header {
+    background-image: linear-gradient(rgb(73,138,220), rgb(98,59,156));
+    height: 91vh;
+/*
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+*/
+    padding-top: 50px; 
+}
+
+#currIcon {
+    max-width: 70%;
+}
+
+#currInfo {
+    display: flex;
+    justify-content: center;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    color: white;
+}
+
+#currTime {
+    font-size: 2.4rem;
+}
+
+.v1 {
+    border-left: 1px solid black;
+    height: 130px;
+    margin-right: 5px;
+}
+
+#currTemp {
+    font-size: 5rem;
+}
+
+#cityForm {
+    display: inline-block;
+    text-align: left;
+}
+
+.ibmPlex {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+}
+
+header > h1 {
+    color: white;
+    font-size: 2.5rem;
+}
+
+main {
+    background-color: white;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: 'Saira Extra Condensed', sans-serif;
+}
+
+.hour {
+    font-size: 1.7rem;
+}
+
+.icon {
+    max-width: 30%;
+}
+
+.temperature {
+    font-size: 5rem;
+}
+
+.v2 {
+    border-top: 1px solid black;
+    margin-bottom: 20px;
+}

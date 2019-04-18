@@ -2,9 +2,61 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>title</title>
+        <meta name="viewport" content="width=device-width">
+        <title>Northern California Weather</title>
+        <link rel="stylesheet" type="text/css" href="reset.css">
+        <link rel="stylesheet" type="text/css" href="weatherApp.css">
     </head>
     <body>
-
+        <header>
+            <h1 class="ibmPlex">Local Weather <br> Six Hour Forecast</h1>
+            <h2 class="ibmPlex">Northern California with doppler radar</h2>
+            <div id="cityForm">
+                <form><span class="ibmPlex">Forecast for </span><br>
+                <input type="text" name="city"><input type="submit" value="submit" class="ibmPlex">
+                </form>
+            </div>
+            <img src="assets/fewclouds-day.svg" id="currIcon">
+            <div id="currInfo">
+                <span id="currTime">
+                current
+                <br>
+                12PM
+                </span>
+                <div class="v1"></div>
+                <span id="currTemp">67</span>
+            </div>
+        </header>
+        <main>
+            <div class="card">
+                <span id="hour1" class="hour">1:00 pm</span>
+                <img src="assets/brokencloud.svg" id="icon1" class="icon">
+                <span id="temp1" class="temperature">67</span>
+            </div>
+            <div class="v2"></div>
+            <div class="card">
+                <span id="hour2" class="hour">1:00 pm</span>
+                <img src="assets/brokencloud.svg" id="icon2" class="icon">
+                <span id="temp2" class="temperature">67</span>
+            </div>
+            <div class="v2"></div>
+            <div class="card">
+                <span id="hour3" class="hour">1:00 pm</span>
+                <img src="assets/brokencloud.svg" id="icon3" class="icon">
+                <span id="temp3" class="temperature">67</span>
+            </div>
+            <div class="v2"></div>
+            <div class="card">
+                <span id="hour4" class="hour">1:00 pm</span>
+                <img src="assets/brokencloud.svg" id="icon4" class="icon">
+                <span id="temp4" class="temperature">67</span>
+            </div>
+            <div class="v2"></div>
+            <div class="card">
+                <span id="hour5" class="hour">1:00 pm</span>
+                <img src="assets/brokencloud.svg" id="icon5" class="icon">
+                <span id="temp5" class="temperature">67</span>
+            </div>
+        </main>
     </body>
 </html>
