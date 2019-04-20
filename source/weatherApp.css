@@ -16,11 +16,25 @@ header {
 header > div > h1 {
     color: white;
     font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+.endl {
+    display: static;
+}
+
+#mobileTitle {
+    display: block;
+}
+
+#webTitle {
+    display: none;
 }
 
 header > div > h2 {
     color: #2e3192;
     font-size: 1.2rem;
+    margin-top: 0;
 }
 
 form > span {
@@ -148,13 +162,42 @@ main {
 }
 
 @media (min-width: 500px) {
-    header > div > h1 {
-        content: 'title';
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        height: 60vh;
+    }
+
+    .endl {
+        display: none;
+    }
+
+    #mobileTitle {
+        display: none;
+    }
+
+    #webTitle {
+        display: block;
+        margin-bottom: 0;
+        font-size: 2.1rem;
+    }
+
+    header > div > h2 {
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+
+    #currIcon1 {
+        max-width: 240px;
     }
     
     main {
         display: flex;
         justify-content: space-around;
+        position: static;
     }
     
     .card {
@@ -164,6 +207,10 @@ main {
     
     .icon {
         max-width: 80%;
+    }
+
+    .arrow {
+        display: none;
     }
 }
 
