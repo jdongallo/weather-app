@@ -8,16 +8,19 @@
         <link rel="stylesheet" type="text/css" href="weatherApp.css">
     </head>
     <body>
-        <header>
-            <h1 class="ibmPlex">Local Weather <br> Six Hour Forecast</h1>
-            <h2 class="ibmPlex">Northern California with doppler radar</h2>
-            <div id="cityForm">
-                <form><span class="ibmPlex">Forecast for </span><br>
-                <input type="text" name="city"><input type="submit" value="submit" class="ibmPlex">
-                </form>
+        <header id="splashScreen">
+            <div id="title">
+                <h1 class="ibmPlex">Local Weather <br> Six Hour Forecast</h1>
+                <h2 class="ibmPlex">Northern California with doppler radar</h2>
+                <div id="cityForm">
+                    <form><span class="ibmPlex">Forecast for </span><br>
+                    <input type="text" name="city"><input type="submit" value="submit" class="ibmPlex">
+                    </form>
+                </div>
             </div>
-            <img src="assets/fewclouds-day.svg" id="currIcon">
+            <img src="assets/fewclouds-day.svg" id="currIcon1">
             <div id="currInfo">
+                <img src="assets/fewclouds-day.svg" id="currIcon2">
                 <span id="currTime">
                 current
                 <br>
@@ -26,8 +29,11 @@
                 <div class="v1"></div>
                 <span id="currTemp">67</span>
             </div>
+            <img src="assets/upArrow.svg" class="arrow" onclick="showForecast()">
         </header>
-        <main>
+
+        <main id="forecast">
+            <img src="assets/downArrow.svg" class="arrow" onclick="hideForecast()">
             <div class="card">
                 <span id="hour1" class="hour">1:00 pm</span>
                 <img src="assets/brokencloud.svg" id="icon1" class="icon">
@@ -58,5 +64,7 @@
                 <span id="temp5" class="temperature">67</span>
             </div>
         </main>
+
+        <script src="weatherApp.js"></script>
     </body>
 </html>
