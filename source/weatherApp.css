@@ -63,6 +63,10 @@ input[type=submit] {
     display: none;
 }
 
+/* #icon0 {
+    max-width: 70%;
+} */
+
 #currInfo {
     display: flex;
     flex-direction: row;
@@ -83,7 +87,7 @@ input[type=submit] {
     margin-right: 5px;
 }
 
-#currTemp {
+#temp0 {
     font-size: 5rem;
 }
 
@@ -128,6 +132,12 @@ input[type=submit] {
 @keyframes slide-out {
     from {top: 0vh;}
     to {top: 100vh;}
+}
+
+#searchBar{
+    padding-left: 8px;
+    padding-top: 2.5px;
+    padding-bottom: 2px;
 }
 
 main {
@@ -248,5 +258,27 @@ main {
     
     #currIcon2 {
         display: block;
+        margin-bottom: 20px;
     }
+}
+
+
+#caMap{
+    clip-path: circle(40%);
+    position: absolute;
+    filter: grayscale(85%);
+}
+
+#cityNames{
+    position: absolute;
+    clip-path: circle(40%);
+}
+
+#radar{
+    /*clip-path: circle(40%);*/
+    padding-top: 20px;
+}
+
+#img-holder{
+	clip-path: circle(40%);
 }

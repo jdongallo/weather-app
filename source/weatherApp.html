@@ -14,8 +14,9 @@
                 <h1 class="ibmPlex" id="webTitle">Local Weather Six Hour Forecast</h1>
                 <h2 class="ibmPlex">Northern California with doppler radar</h2>
                 <div id="cityForm">
-                    <form><span class="ibmPlex">Forecast for </span><br class="endl">
-                    <input type="text" name="city"><input type="submit" value="submit" class="ibmPlex">
+                    <form><span class="ibmPlex">Forecast for </span><br>
+                    <input type="text" name="city" placeholder="Davis, CA" id="searchBar"><input type="submit" value="submit" class="ibmPlex"
+                    onclick="newRequest()">
                     </form>
                 </div>
             </div>
@@ -28,7 +29,7 @@
                 12PM
                 </span>
                 <div class="v1"></div>
-                <span id="currTemp">67</span>
+                <span id="temp0">67</span>
             </div>
             <img src="assets/upArrow.svg" class="arrow" onclick="showForecast()">
         </header>
@@ -68,8 +69,15 @@
                 <img src="assets/brokencloud.svg" id="icon5" class="icon">
                 <span id="temp5" class="temperature">67</span>
             </div>
+            <div id="radar" class="radar">
+                
+                <img src="http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg" id="caMap"/>
+                <img src="http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif" id="cityNames"/>
+                <!-- <img src=""> -->
+                <img id='img-holder' src="" alt="https://radar.weather.gov/ridge/RadarImg/N0R/DAX_N0R_0.gif" />
+            </div>
         </main>
-
-        <script src="weatherApp.js"></script>
+         <script type="text/javascript" src="changeTemp.js"></script>
+        <script type="text/javascript" src="weatherApp.js"></script>       
     </body>
 </html>
