@@ -56,6 +56,7 @@ input[type=submit] {
 
 #currIcon1 {
     max-width: 280px;
+    padding-top: 30px;
 }
 
 #currIcon2 {
@@ -191,13 +192,15 @@ main {
     }
 
     #currIcon1 {
-        max-width: 240px;
+        max-width: 200px;
     }
     
     main {
         display: flex;
         justify-content: space-around;
+        align-items: center;
         position: static;
+        height: 40vh;
     }
     
     .card {
@@ -206,15 +209,39 @@ main {
     }
     
     .icon {
-        max-width: 80%;
+        max-width: 90%;
     }
 
     .arrow {
         display: none;
     }
+
+    #currTime {
+        line-height: 40px;
+        font-size: 2rem;
+    }
+
+    .v1 {
+        height: 60px;
+        margin-right: 10px;
+        margin-left: 5px;
+    }
+
+    .v3 {
+        border-left: 1px solid black;
+        height: 150px;
+    }
 }
 
 @media (min-width: 800px) {
+    header {
+        box-shadow: 0 0 30px;
+    }
+
+    main {
+        height: 40vh;
+    }
+
     #currIcon1 {
         display: none;
     }
