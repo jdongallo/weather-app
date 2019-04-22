@@ -172,6 +172,10 @@ main {
     border-top: 1px solid black;
 }
 
+#radar {
+    display: none;
+}
+
 @media (min-width: 500px) {
     body {
         display: flex;
@@ -241,6 +245,27 @@ main {
         border-left: 1px solid black;
         height: 150px;
     }
+
+    #caMap{
+        clip-path: circle(40%);
+        position: absolute;
+        filter: grayscale(85%);
+    }
+    
+    #cityNames{
+        position: absolute;
+        clip-path: circle(40%);
+    }
+    
+    #radar{
+        /*clip-path: circle(40%);*/
+        padding-top: 20px;
+        display: block;
+    }
+    
+    #img-holder{
+        clip-path: circle(40%);
+    }
 }
 
 @media (min-width: 800px) {
@@ -260,25 +285,4 @@ main {
         display: block;
         margin-bottom: 20px;
     }
-}
-
-
-#caMap{
-    clip-path: circle(40%);
-    position: absolute;
-    filter: grayscale(85%);
-}
-
-#cityNames{
-    position: absolute;
-    clip-path: circle(40%);
-}
-
-#radar{
-    /*clip-path: circle(40%);*/
-    padding-top: 20px;
-}
-
-#img-holder{
-	clip-path: circle(40%);
 }
