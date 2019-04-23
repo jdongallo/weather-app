@@ -100,7 +100,7 @@ main {
 
 #cityNames{
     position: absolute;
-    clip-path: circle(40%);
+    clip-path: circle(50%);
 }
 
 #radar{
@@ -109,5 +109,5 @@ main {
 }
 
 #img-holder{
-	clip-path: circle(40%);
+	clip-path: circle(50%);
 }

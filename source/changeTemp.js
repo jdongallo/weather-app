@@ -14,10 +14,14 @@ function createCORSRequest(method, url) {
   return xhr;
 }
 
-// Make the actual CORS request.
-function makeCorsRequest() {
+function getCity(){
+	makeCorsRequest()
+}
 
-   let url = "http://api.openweathermap.org/data/2.5/forecast/hourly?q=Dixon,CA,US&units=imperial&APPID=a52110d5e31471d863d8f80d31d79cf1"
+// Make the actual CORS request.
+function makeCorsRequest(city) {
+
+  let url = "http://api.openweathermap.org/data/2.5/forecast/hourly?q="+ city +",CA,US&units=imperial&APPID=a52110d5e31471d863d8f80d31d79cf1"
 
   let xhr = createCORSRequest('GET', url);
 
@@ -45,21 +49,21 @@ function makeCorsRequest() {
 }
 
 // run this code to make request when this script file gets executed 
-makeCorsRequest();
+// makeCorsRequest();
 
 function newRequest() {
-  // title = document.getElementById("city").value;
+  //
   let icon = document.getElementById("icon1");
   	icon.src="assets/clearsky.svg"
 
-  for( let i =0 ; i< 5 ; i++){
+  for( let i =0 ; i< 6 ; i++){
    currTemp = object.list[i].main.temp;
   
     document.getElementById("temp"+i).textContent = Math.round(currTemp);
   }
 
 
- for( let i =0 ; i< 5 ; i++){
+ for( let i =0 ; i< 6 ; i++){
     let icon = document.getElementById("icon"+i);
 
     // console.log(icon)
@@ -112,4 +116,7 @@ function newRequest() {
     icon.src = "assets/thunderstorms.svg"
   }
   } // end for
+
+  // function setTime
 }
+
