@@ -3,7 +3,7 @@
 let object = undefined;
 let title = undefined;
 let currTemp = undefined;
-
+let newCity = undefined;
 
 // Do a CORS request to get Davis weather hourly forecast
 
@@ -15,13 +15,15 @@ function createCORSRequest(method, url) {
 }
 
 function getCity(){
-	makeCorsRequest()
-}
+	newCity = document.getElementById("searchBar");
+	console.log(newCity.value);
+	makeCorsRequest(newCity);
+};
 
 // Make the actual CORS request.
 function makeCorsRequest(city) {
 
-  let url = "http://api.openweathermap.org/data/2.5/forecast/hourly?q="+ city +",CA,US&units=imperial&APPID=a52110d5e31471d863d8f80d31d79cf1"
+  let url = "http://api.openweathermap.org/data/2.5/forecast/hourly?q="+city+",CA,US&units=imperial&APPID=a52110d5e31471d863d8f80d31d79cf1"
 
   let xhr = createCORSRequest('GET', url);
 
@@ -53,8 +55,6 @@ function makeCorsRequest(city) {
 
 function newRequest() {
   //
-  let icon = document.getElementById("icon1");
-  	icon.src="assets/clearsky.svg"
 
   for( let i =0 ; i< 6 ; i++){
    currTemp = object.list[i].main.temp;
@@ -63,57 +63,57 @@ function newRequest() {
   }
 
 
- for( let i =0 ; i< 6 ; i++){
-    let icon = document.getElementById("icon"+i);
+ for( let i =0 ; i< 7 ; i++){
+    let weatherIcon = document.getElementById("icon"+i);
 
     // console.log(icon)
-  if(object.list[i].weather[0].description == "Clouds"){
-    icon = document.getElementById("icon"+i);
-    icon.src = "assets/brokencloud.svg"
+  if(object.list[i].weather[0].icon == "04d" || object.list[i].weather[0].icon == "04n"){
+    weatherIcon = document.getElementById("icon"+i);
+    weatherIcon.src = "assets/brokencloud.svg"
   }
-  else if(object.list[i].weather[0].description == "clear night"){
-    icon = document.getElementById("icon"+i);
-    icon.src = "assets/clear-night.svg"
+  else if(object.list[i].weather[0].icon == "01n"){
+    weatherIcon = document.getElementById("icon"+i);
+    weatherIcon.src = "assets/clear-night.svg"
   }
-   else if(object.list[i].weather[0].description == "clear day"){
-    icon = document.getElementById("icon"+i);
-    icon.src = "assets/clearsky.svg"
+   else if(object.list[i].weather[0].icon == "01d"){
+    weatherIcon = document.getElementById("icon"+i);
+    weatherIcon.src = "assets/clearsky.svg"
   }
-   else if(object.list[i].weather[0].description == "few clouds day"){
-    icon = document.getElementById("icon"+i);
-    icon.src = "assets/fewclouds-day.svg"
+   else if(object.list[i].weather[0].icon == "02d"){
+    weatherIcon = document.getElementById("icon"+i);
+    weatherIcon.src = "assets/fewclouds-day.svg"
   }
-   else if(object.list[i].weather[0].description == "clear sky"){
-    icon = document.getElementById("icon"+i);
-    icon.src = "assets/fewclouds-night.svg"
+   else if(object.list[i].weather[0].icon == "02n"){
+    weatherIcon = document.getElementById("icon"+i);
+    weatherIcon.src = "assets/fewclouds-night.svg"
   }
-   else if(object.list[i].weather[0].description == "clear sky"){
-    icon = document.getElementById("icon"+i);
-    icon.src = "assets/mist.svg"
+   else if(object.list[i].weather[0].icon == "50d" || object.list[i].weather[0].icon == "50n"){
+    weatherIcon = document.getElementById("icon"+i);
+    weatherIcon.src = "assets/mist.svg"
   }
-   else if(object.list[i].weather[0].description == "clear sky"){
-    icon = document.getElementById("icon"+i);
-    icon.src = "assets/rain-day.svg"
+   else if(object.list[i].weather[0].icon == "10d"){
+    weatherIcon = document.getElementById("icon"+i);
+    weatherIcon.src = "assets/rain-day.svg"
   }
-   else if(object.list[i].weather[0].description == "clear sky"){
-    icon = document.getElementById("icon"+i);
-    icon.src = "assets/rain-night.svg"
+   else if(object.list[i].weather[0].icon == "10n"){
+    weatherIcon = document.getElementById("icon"+i);
+    weatherIcon.src = "assets/rain-night.svg"
   }
-   else if(object.list[i].weather[0].description == "clear sky"){
-    icon = document.getElementById("icon"+i);
-    icon.src = "assets/scatteredclouds.svg"
+   else if(object.list[i].weather[0].icon == "03d" || object.list[i].weather[0].icon == "03n"){
+    weatherIcon = document.getElementById("icon"+i);
+    weatherIcon.src = "assets/scatteredclouds.svg"
   }
-   else if(object.list[i].weather[0].description == "clear sky"){
-    icon = document.getElementById("icon"+i);
-    icon.src = "assets/showerrain.svg"
+   else if(object.list[i].weather[0].icon == "09d" || object.list[i].weather[0].icon == "09n"){
+    weatherIcon = document.getElementById("icon"+i);
+    weatherIcon.src = "assets/showerrain.svg"
   }
-   else if(object.list[i].weather[0].description == "clear sky"){
-    icon = document.getElementById("icon"+i);
-    icon.src = "assets/snow.svg"
+   else if(object.list[i].weather[0].icon == "13d" || object.list[i].weather[0].icon == "13n" ){
+    weatherIcon = document.getElementById("icon"+i);
+    weatherIcon.src = "assets/snow.svg"
   }
-   else if(object.list[i].weather[0].description == "clear sky"){
-    icon = document.getElementById("icon"+i);
-    icon.src = "assets/thunderstorms.svg"
+   else if(object.list[i].weather[0].icon == "11d" || object.list[i].weather[0].icon == "11n" ){
+    weatherIcon = document.getElementById("icon"+i);
+    weatherIcon.src = "assets/thunderstorms.svg"
   }
   } // end for
 

@@ -48,18 +48,18 @@ input[type=text] {
     color: white;
 }
 
-input[type=submit] {
+button[type=submit] {
     color: white;
     background-color: rgb(120,138,220);
     border: 0;
 }
 
-#currIcon1 {
+#icon0 {
     max-width: 280px;
     padding-top: 30px;
 }
 
-#currIcon2 {
+#icon1 {
     display: none;
 }
 
