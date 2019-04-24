@@ -180,10 +180,14 @@ main {
     body {
         display: flex;
         flex-direction: column;
+        height: 100vh;
     }
 
     header {
-        height: 60vh;
+        z-index: 1;
+        box-shadow: 0px 0px 30px 10px;
+        height: 500px;
+        padding-top: 20px;
     }
 
     .endl {
@@ -210,24 +214,39 @@ main {
     }
     
     main {
+        z-index: 0;
         display: flex;
-        justify-content: space-around;
         align-items: center;
         position: static;
-        height: 40vh;
+    }
+
+    .showForecast {
+        flex-direction: row;
     }
     
     .card {
         display: flex;
         flex-direction: column;
+        width: 20vw;
     }
     
     .icon {
-        max-width: 90%;
+        max-width: 80px;
+    }
+    .temperature {
+        font-size: 3rem;
     }
 
     .arrow {
         display: none;
+    }
+
+    #currIcon1 {
+        margin-right: 40vw;
+    }
+
+    #currInfo {
+        margin-right: 40vw;
     }
 
     #currTime {
@@ -243,7 +262,7 @@ main {
 
     .v3 {
         border-left: 1px solid black;
-        height: 150px;
+        height: 100%;
     }
 
     #caMap{
@@ -259,30 +278,63 @@ main {
     
     #radar{
         /*clip-path: circle(40%);*/
+        position: absolute;
         padding-top: 20px;
         display: block;
+        top: 22vh;
+        left: 47vw;
     }
     
     #img-holder{
         clip-path: circle(40%);
     }
+    
+    .radarImg {
+        width: 300px;
+    }
 }
 
 @media (min-width: 800px) {
     header {
-        box-shadow: 0 0 30px;
+        text-align: left;
+        /* display: flex;
+        flex-direction: column;
+        justify-content: flex-start; */
+    }
+
+    #title {
+        margin-left: 8vw;
     }
 
     main {
-        height: 40vh;
+        height: 50vh;
     }
 
     #currIcon1 {
         display: none;
     }
+
+    #currInfo {
+        /* margin-right: 300px; */
+        margin-top: 5vh;
+    }
     
     #currIcon2 {
         display: block;
-        margin-bottom: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .v1 {
+        display: none;
+    }
+
+    #radar {
+        top: 7vh;
+        left: 60vw;
+    }
+    
+    .radarImg {
+        width: 350px;
     }
 }
