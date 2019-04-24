@@ -77,6 +77,10 @@ button[type=submit] {
     color: white;
 }
 
+#hour0 {
+    font-size: 2.4rem;
+}
+
 #currTime {
     font-size: 2.4rem;
 }
@@ -231,6 +235,11 @@ main {
     }
 
     #currTime {
+        line-height: 40px;
+        font-size: 2rem;
+    }
+
+    #hour0 {
         line-height: 40px;
         font-size: 2rem;
     }

@@ -62,11 +62,11 @@ function getTenImages() {
 
 getTenImages();
 
-let image_counter = 0; 
-function change_image(){
-	document.getElementById("img-holder").src = imageArray[image_counter%10].src;
-	image_counter++;
-}
+// let image_counter = 0; 
+// function change_image(){
+// 	document.getElementById("img-holder").src = imageArray[image_counter%10].src;
+// 	image_counter++;
+// }
 
-let timelapse = setInterval(change_image, 500);
+// let timelapse = setInterval(change_image, 500);
 

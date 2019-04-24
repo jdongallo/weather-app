@@ -4,6 +4,8 @@ let object = undefined;
 let title = undefined;
 let currTemp = undefined;
 let newCity = undefined;
+let currTime = undefined;
+let today = new Date();
 
 // Do a CORS request to get Davis weather hourly forecast
 
@@ -16,14 +18,14 @@ function createCORSRequest(method, url) {
 
 function getCity(){
 	newCity = document.getElementById("searchBar");
-	console.log(newCity.value);
-	makeCorsRequest(newCity);
+	// console.log(newCity.value);
+	makeCorsRequest(newCity.value);
 };
 
 // Make the actual CORS request.
 function makeCorsRequest(city) {
 
-  let url = "http://api.openweathermap.org/data/2.5/forecast/hourly?q="+city+",CA,US&units=imperial&APPID=a52110d5e31471d863d8f80d31d79cf1"
+  let url = "http://api.openweathermap.org/data/2.5/forecast/hourly?q="+ city +",CA,US&units=imperial&APPID=a52110d5e31471d863d8f80d31d79cf1"
 
   let xhr = createCORSRequest('GET', url);
 
@@ -61,6 +63,13 @@ function newRequest() {
   
     document.getElementById("temp"+i).textContent = Math.round(currTemp);
   }
+
+  // for( let i =0 ; i< 6 ; i++){
+
+  // time = today.getHours()+i + ":" + today.getMinutes()
+  
+  //   document.getElementById("hour"+i).textContent = time +" PM" ;
+  // }
 
 
  for( let i =0 ; i< 7 ; i++){
@@ -120,3 +129,21 @@ function newRequest() {
   // function setTime
 }
 
+
+function setTime(){
+	for( let i =0 ; i< 6 ; i++){
+
+    time = today.getHours()+i + ":" + today.getMinutes()
+
+    if( today.getHours()+i > 12){
+    	time = (today.getHours()+i - 12) + today.getMinutes()
+    }
+  
+    // document.getElementById("hour"+i).textContent = time +" PM" ;
+    console.log(time)
+  }	
+
+setTime();
+
+
+}
