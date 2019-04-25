@@ -78,7 +78,10 @@ function newRequest() {
 
 	  for( let i =0 ; i< 6 ; i++){
 
-	   let time = today.getHours()+i; //+ ":00";
+		 let time = today.getHours()+i; //+ ":00";
+		 if(time >= 24){
+			 time -= 24;
+		 }
 
 	   if(i == 0 ){
 		   if( time > 12){
