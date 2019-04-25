@@ -84,8 +84,10 @@ function newRequest() {
 		 }
 
 	   if(i == 0 ){
-		   if( time > 12){
-		   	time = time - 12;
+		   if( time >= 12){
+		   	if (time != 12) {
+		   			time = time - 12;
+				}
 		   	document.getElementById("hour"+i).textContent = time +" PM" ;
 		   }
 		   else{
@@ -93,8 +95,10 @@ function newRequest() {
 		   }
 		}
 		else{
-	 		if( time > 12){
-		   	time = time - 12;
+	 		if( time >= 12){
+				if (time != 12) {
+		   			time = time - 12;
+				}
 		   	document.getElementById("hour"+i).textContent = time +":00 PM" ;
 		   }
 		   else{
