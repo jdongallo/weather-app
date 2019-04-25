@@ -1,3 +1,5 @@
+"use strict"
+
 function showForecast() {
     let element = document.getElementById("forecast");
     element.classList.add("showForecast");
@@ -54,7 +56,7 @@ function getTenImages() {
 	let dateObj = new Date();  // defaults to current date and time
 	// if we try 150 images, and get one out of every 10, we should get enough
 	for (let i = 0; i < 150; i++) {
-		newImage = tryToGetImage(dateObj);
+		let newImage = tryToGetImage(dateObj);
 		dateObj.setMinutes( dateObj.getMinutes()-1 ); // back in time one minute
 	}
 
