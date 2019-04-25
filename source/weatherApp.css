@@ -48,7 +48,7 @@ input[type=text] {
     color: white;
 }
 
-button[type=submit] {
+button {
     color: white;
     background-color: rgb(120,138,220);
     border: 0;
@@ -75,10 +75,6 @@ button[type=submit] {
     align-items: center;
     font-family: 'Saira Extra Condensed', sans-serif;
     color: white;
-}
-
-#hour0 {
-    font-size: 2.4rem;
 }
 
 #currTime {
@@ -184,10 +180,14 @@ main {
     body {
         display: flex;
         flex-direction: column;
+        height: 100vh;
     }
 
     header {
-        height: 60vh;
+        z-index: 1;
+        box-shadow: 0px 0px 30px 10px;
+        height: 500px;
+        padding-top: 20px;
     }
 
     .endl {
@@ -209,37 +209,47 @@ main {
         font-size: 1.5rem;
     }
 
-    #currIcon1 {
+    #icon0 {
         max-width: 200px;
     }
     
     main {
+        z-index: 0;
         display: flex;
-        justify-content: space-around;
         align-items: center;
         position: static;
-        height: 40vh;
+    }
+
+    .showForecast {
+        flex-direction: row;
     }
     
     .card {
         display: flex;
         flex-direction: column;
+        width: 20vw;
     }
     
     .icon {
-        max-width: 90%;
+        max-width: 80px;
+    }
+    .temperature {
+        font-size: 3rem;
     }
 
     .arrow {
         display: none;
     }
 
-    #currTime {
-        line-height: 40px;
-        font-size: 2rem;
+    #icon0 {
+        margin-right: 40vw;
     }
 
-    #hour0 {
+    #currInfo {
+        margin-right: 40vw;
+    }
+
+    #currTime {
         line-height: 40px;
         font-size: 2rem;
     }
@@ -252,46 +262,83 @@ main {
 
     .v3 {
         border-left: 1px solid black;
-        height: 150px;
+        height: 100%;
     }
 
     #caMap{
         clip-path: circle(40%);
         position: absolute;
         filter: grayscale(85%);
+        z-index: 2;
     }
     
     #cityNames{
         position: absolute;
         clip-path: circle(40%);
+        z-index: 4;
     }
     
     #radar{
         /*clip-path: circle(40%);*/
+        position: absolute;
         padding-top: 20px;
         display: block;
+        top: 22vh;
+        left: 47vw;
     }
     
     #img-holder{
+    	position: absolute;
         clip-path: circle(40%);
+        z-index: 3;
+    }
+    
+    .radarImg {
+        width: 300px;
     }
 }
 
 @media (min-width: 800px) {
     header {
-        box-shadow: 0 0 30px;
+        text-align: left;
+        /* display: flex;
+        flex-direction: column;
+        justify-content: flex-start; */
+    }
+
+    #title {
+        margin-left: 8vw;
     }
 
     main {
-        height: 40vh;
+        height: 50vh;
     }
 
-    #currIcon1 {
+    #icon0 {
         display: none;
     }
+
+    #currInfo {
+        /* margin-right: 300px; */
+        margin-top: 5vh;
+    }
     
-    #currIcon2 {
+    #icon1 {
         display: block;
-        margin-bottom: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .v1 {
+        display: none;
+    }
+
+    #radar {
+        top: 7vh;
+        left: 60vw;
+    }
+    
+    .radarImg {
+        width: 350px;
     }
 }

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>Northern California Weather</title>
-        <link rel="stylesheet" type="text/css" href="reset.css">
+        <!-- <link rel="stylesheet" type="text/css" href="reset.css"> -->
         <link rel="stylesheet" type="text/css" href="weatherApp.css">
     </head>
     <body>
@@ -14,22 +14,28 @@
                 <h1 class="ibmPlex" id="webTitle">Local Weather Six Hour Forecast</h1>
                 <h2 class="ibmPlex">Northern California with doppler radar</h2>
                 <div id="cityForm">
-                    <form><span class="ibmPlex">Forecast for </span><br>
-                    <input type="text" name="city" placeholder="Davis, CA" id="searchBar"><button class="ibmPlex"
+                    <form><span class="ibmPlex">Forecast for </span><br class="endl">
+                    <input type="text" name="city" placeholder="Davis, CA" id="searchBar"><button type="button" class="ibmPlex"
                     onclick="getCity()">Submit</button>
                     </form>
                 </div>
             </div>
             <img src="assets/fewclouds-day.svg" id="icon0">
             <div id="currInfo">
-                <img src="assets/fewclouds-day.svg" id="icon1">
+                <!-- <img src="assets/fewclouds-day.svg" id="currIcon2"> -->
                 <span id="currTime">
                 current
                 <br>
-                 <span id="hour0">12PM</span>
+                <span id="hour0">12PM</span>
                 </span>
                 <div class="v1"></div>
+                <img src="assets/fewclouds-day.svg" id="icon1">
                 <span id="temp0">67</span>
+            </div>
+            <div id="radar" class="radar">
+                <img src="http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg" id="caMap" class="radarImg"/>
+                <img src="http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif" id="cityNames" class="radarImg"/>
+                <img id='img-holder' src="" alt="https://radar.weather.gov/ridge/RadarImg/N0R/DAX_N0R_0.gif" class="radarImg"/>
             </div>
             <img src="assets/upArrow.svg" class="arrow" onclick="showForecast()">
         </header>
@@ -69,16 +75,9 @@
                 <img src="assets/brokencloud.svg" id="icon6" class="icon">
                 <span id="temp5" class="temperature">67</span>
             </div>
-            <div id="radar" class="radar">
-                
-                <img src="http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg" id="caMap"/>
-                <img src="http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif" id="cityNames"/>
-                <!-- <img src=""> -->
-                <img id='img-holder' src="" alt="https://radar.weather.gov/ridge/RadarImg/N0R/DAX_N0R_0.gif" />
-            </div>
         </main>
          <script type="text/javascript" src="changeTemp.js"></script>
         <script type="text/javascript" src="weatherApp.js"></script>
-        <script type="text/javascript">makeCorsRequest("Davis")</script>       
+        <script type="text/javascript"> makeCorsRequest("Davis") </script>       
     </body>
 </html>
